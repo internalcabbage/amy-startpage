@@ -1,5 +1,5 @@
 # startpage
-The startpage I use
+The startpage I created so that it fits with the rest of my configuration/setup
 
 # How to use:
 ## Firefox:
