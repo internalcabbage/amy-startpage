@@ -21,7 +21,9 @@ body {
 }
 
 .title-part {
-  border: double; var(--text_normal);
+  border-style: double;
+  border-color: var(--text_normal);
+  border-width: 2px;
   color: var(--text_normal);
   text-align: center;
   font-family: hack;
@@ -38,8 +40,7 @@ body {
   color: var(--text_inactive);
   border: 2px solid var(--text_inactive);
   box-sizing: border-box;
-  padding: 12px 10px;
-  margin: auto;
+  padding: 12px 15px;
 }
 
 .address-box input::placeholder{
@@ -54,6 +55,8 @@ body {
   background-color: var(--bg_normal);
   color: var(--text_normal);
   border-color: var(--text_normal);
+  transition: 0.2s ease; 
+  transition-property: var(--text_normal);
 }
 
 /*.goButton {
@@ -79,9 +82,11 @@ body {
   padding: 12px 10px;
   font-family: Hack;
 }
-.goButton:hover {
+.goButton:hover,
+.goButton:focus {
   border-color: var(--text_normal);
-
+    transition: 0.2s ease; 
+  transition-property: var(--text_normal);
 }
 
 .address-box input,
@@ -89,6 +94,7 @@ body {
   font-size: 14px;
   line-height: 1.2;
   box-sizing: border-box;
+
 }
 
 
@@ -97,11 +103,16 @@ body {
   box-sizing: content-box;
   margin: auto;
   padding: 5px;
-  max-width: 435px;
+  max-width: 440px;
+  transition: 0.2s ease; 
+  transition-property: var(--text_inactive);
 }
 .address-box:hover,
-.address-box:has(input:focus) {
+.address-box:has(input:focus),
+.address-box:has(.goButton:focus) {
     border: 2px solid var(--text_normal);
+      transition: 0.2s ease; 
+  transition-property: var(--text_normal);
 }
 
 .secretText {
