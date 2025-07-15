@@ -81,6 +81,8 @@ body {
   box-sizing: border-box;
   padding: 12px 10px;
   font-family: Hack;
+  transition: 0.2s ease; 
+  transition-property: var(--text_inactive);
 }
 .goButton:hover,
 .goButton:focus {
