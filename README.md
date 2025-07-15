@@ -1,6 +1,6 @@
 # startpage
 The startpage I created so that it fits with the rest of my configuration/setup.
-BTW, i have never touched html/css/js in my life so this will start horribly
+i have never touched html/css/js in my life so this will start horribly
 
 # How to use:
 ## Firefox:
