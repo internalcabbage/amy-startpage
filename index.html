@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="main.css">
+  <title>Amy's Really Good Startpage</title>
+</head>
+<body>
+  <!-- <h1 style="font-size:45px">Hello, World!</h1> -->
+</body>
+
+
+<!-- old form (bad) -->
+<!-- <form method="get" id="search" action="http://noai.duckduckgo.com/">
+    <input type="text" name="q" maxlength="255" placeholder="Search&hellip;"/>
+    <input type="submit" value="DuckDuckGo Search" style="visibility: hidden;" />
+</form>-->
+
+<div class="title-part">
+  <h2 style="font-size:45px">Hello, World!</h2>
+  <p>Welcome</p>
+</div>
+
+
+
+<!-- Adress Box (new, good) -->
+<div class="address-box">
+  <form onsubmit="return go(event)">
+    <input id="query" type="text" placeholder="Search with DuckDuckGo or enter address" size=40 autofocus>
+    <button class="goButton">Go!</button>
+  </form>
+</div>
+
+<!-- Go button, for when you're to stupid to press the enter/return key-->
+
+
+<script>
+  function go(event) {
+    event.preventDefault();
+    const inputField = document.getElementById('query');
+    const input = document.getElementById('query').value.trim();
+    // do not fall for any shenanigans (entering nothing)
+
+    if (input === '') return false;
+    
+    const Check4URL = input.match(/^([a-z]+:\/\/)?[a-z0-9\-]+\.[a-z]{2,}.*$/i);
+    //assume https unless specified
+    if (Check4URL) {
+      const hasProtocol = input.match(/^[a-z]+:\/\//i);
+      const url = hasProtocol ? input : 'https://' + input;
+      window.location.href = url;
+    } else {
+    // if not just shove the duckduckgo search prefix at the start of it
+      const SearchWeb = 'https://noai.duckduckgo.com/?q=' + encodeURIComponent(input);
+      window.location.href = SearchWeb;
+    }
+
+    return false;
+  }
+</script>
+
+<body>
+  <p style="font-size:15px" class="secretText">secret</p>
+</body>
+
+
+</html>
